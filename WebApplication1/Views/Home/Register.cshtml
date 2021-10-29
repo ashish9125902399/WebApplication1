@@ -1,0 +1,72 @@
+﻿@model WebApplication1.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<style>
+    .form-control{
+        margin:auto;
+    }
+    .form-horizontal{
+        height:600px;
+        width:400px;
+        margin:auto;
+        margin-top:50px;
+        text-align:center;
+        background-color:white;
+    }
+</style>
+
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+
+<div class="form-horizontal">
+    <br />
+    <h2>Create an Account</h2>
+    <br />
+    Sign Up with your social media account or email address
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+    @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Your Name" } })
+
+    @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+    <br />
+    @Html.EditorFor(model => model.mobile, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Your Mobile Number" } })
+    @Html.ValidationMessageFor(model => model.mobile, "", new { @class = "text-danger" })
+    <br />
+    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Your Email-ID" } })
+    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+    <br />
+    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Create a Password" } })
+    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+    <br />
+    @Html.EditorFor(model => model.Rpassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Retype Your Password" } })
+    @Html.ValidationMessageFor(model => model.Rpassword, "", new { @class = "text-danger" })
+
+    <br />
+    @Html.CheckBoxFor(model => model.Checkbx, new { htmlAttributes = new { @class = "form-control"} })) I Agree with Terms of Services and Privacy Policy<br />
+    <br />
+    <input type="submit" value="Sign Up" class="btn btn-default" style="color:white; font-weight:bold; font-size:large; height:40px; width:300px; background-color:forestgreen" />
+    <br />
+    <br />
+    Already have an account? @Html.ActionLink("Login","Login")
+</div>
+
+}
+
+<div style="text-decoration-color:#ff0000">
+    @Html.ActionLink("HOME", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

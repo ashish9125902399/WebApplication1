@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GKHUBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Biology">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="int" Nullable="false" />
+          <Property Name="Question" Type="nvarchar" MaxLength="500" />
+          <Property Name="A" Type="nvarchar" MaxLength="100" />
+          <Property Name="B" Type="nvarchar" MaxLength="100" />
+          <Property Name="C" Type="nvarchar" MaxLength="100" />
+          <Property Name="D" Type="nvarchar" MaxLength="100" />
+          <Property Name="RightAns" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Chemistry">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="int" Nullable="false" />
+          <Property Name="Question" Type="nvarchar" MaxLength="500" />
+          <Property Name="A" Type="nvarchar" MaxLength="100" />
+          <Property Name="B" Type="nvarchar" MaxLength="100" />
+          <Property Name="C" Type="nvarchar" MaxLength="100" />
+          <Property Name="D" Type="nvarchar" MaxLength="100" />
+          <Property Name="RightAns" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CurrentAffairs">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="int" Nullable="false" />
+          <Property Name="Question" Type="nvarchar" MaxLength="500" />
+          <Property Name="A" Type="nvarchar" MaxLength="100" />
+          <Property Name="B" Type="nvarchar" MaxLength="100" />
+          <Property Name="C" Type="nvarchar" MaxLength="100" />
+          <Property Name="D" Type="nvarchar" MaxLength="100" />
+          <Property Name="RightAns" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Economic">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="int" Nullable="false" />
+          <Property Name="Question" Type="nvarchar" MaxLength="500" />
+          <Property Name="A" Type="nvarchar" MaxLength="100" />
+          <Property Name="B" Type="nvarchar" MaxLength="100" />
+          <Property Name="C" Type="nvarchar" MaxLength="100" />
+          <Property Name="D" Type="nvarchar" MaxLength="100" />
+          <Property Name="RightAns" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Geography">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="nvarchar" MaxLength="500" />
+          <Property Name="A" Type="nvarchar" MaxLength="100" />
+          <Property Name="B" Type="nvarchar" MaxLength="100" />
+          <Property Name="C" Type="nvarchar" MaxLength="100" />
+          <Property Name="D" Type="nvarchar" MaxLength="100" />
+          <Property Name="RightAns" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="int" Nullable="false" />
+          <Property Name="Question" Type="nvarchar" MaxLength="500" />
+          <Property Name="A" Type="nvarchar" MaxLength="100" />
+          <Property Name="B" Type="nvarchar" MaxLength="100" />
+          <Property Name="C" Type="nvarchar" MaxLength="100" />
+          <Property Name="D" Type="nvarchar" MaxLength="100" />
+          <Property Name="RightAns" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Physics">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="int" Nullable="false" />
+          <Property Name="Question" Type="nvarchar" MaxLength="500" />
+          <Property Name="A" Type="nvarchar" MaxLength="100" />
+          <Property Name="B" Type="nvarchar" MaxLength="100" />
+          <Property Name="C" Type="nvarchar" MaxLength="100" />
+          <Property Name="D" Type="nvarchar" MaxLength="100" />
+          <Property Name="RightAns" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Polity">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="nvarchar" MaxLength="500" />
+          <Property Name="A" Type="nvarchar" MaxLength="100" />
+          <Property Name="B" Type="nvarchar" MaxLength="100" />
+          <Property Name="C" Type="nvarchar" MaxLength="100" />
+          <Property Name="D" Type="nvarchar" MaxLength="100" />
+          <Property Name="RightAns" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Register">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="GKHUBModelStoreContainer">
+          <EntitySet Name="Biology" EntityType="Self.Biology" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Chemistry" EntityType="Self.Chemistry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurrentAffairs" EntityType="Self.CurrentAffairs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Economic" EntityType="Self.Economic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Geography" EntityType="Self.Geography" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Physics" EntityType="Self.Physics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Polity" EntityType="Self.Polity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Register" EntityType="Self.Register" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GKHUBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GKHUBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Biologies" EntityType="GKHUBModel.Biology" />
+          <EntitySet Name="Logins" EntityType="GKHUBModel.Login" />
+          <EntitySet Name="Physics" EntityType="GKHUBModel.Physic" />
+          <EntitySet Name="Registers" EntityType="GKHUBModel.Register" />
+          <EntitySet Name="Chemistries" EntityType="GKHUBModel.Chemistry" />
+          <EntitySet Name="CurrentAffairs" EntityType="GKHUBModel.CurrentAffair" />
+          <EntitySet Name="Histories" EntityType="GKHUBModel.History" />
+          <EntitySet Name="Polities" EntityType="GKHUBModel.Polity" />
+          <EntitySet Name="Economics" EntityType="GKHUBModel.Economic" />
+          <EntitySet Name="Geographies" EntityType="GKHUBModel.Geography" />
+        </EntityContainer>
+        <EntityType Name="Biology">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="Int32" Nullable="false" />
+          <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="A" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="C" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RightAns" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Physic">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="Int32" Nullable="false" />
+          <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="A" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="C" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RightAns" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Register">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Chemistry">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="Int32" Nullable="false" />
+          <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="A" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="C" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RightAns" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CurrentAffair">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="Int32" Nullable="false" />
+          <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="A" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="C" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RightAns" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="Int32" Nullable="false" />
+          <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="A" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="C" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RightAns" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Polity">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="A" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="C" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RightAns" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Economic">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="Int32" Nullable="false" />
+          <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="A" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="C" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RightAns" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Geography">
+          <Key>
+            <PropertyRef Name="QID" />
+          </Key>
+          <Property Name="QID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="A" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="C" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="D" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RightAns" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GKHUBModelStoreContainer" CdmEntityContainer="GKHUBEntities">
+          <EntitySetMapping Name="Biologies">
+            <EntityTypeMapping TypeName="GKHUBModel.Biology">
+              <MappingFragment StoreEntitySet="Biology">
+                <ScalarProperty Name="RightAns" ColumnName="RightAns" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="QID" ColumnName="QID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="GKHUBModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Physics">
+            <EntityTypeMapping TypeName="GKHUBModel.Physic">
+              <MappingFragment StoreEntitySet="Physics">
+                <ScalarProperty Name="RightAns" ColumnName="RightAns" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="QID" ColumnName="QID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registers">
+            <EntityTypeMapping TypeName="GKHUBModel.Register">
+              <MappingFragment StoreEntitySet="Register">
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Chemistries">
+            <EntityTypeMapping TypeName="GKHUBModel.Chemistry">
+              <MappingFragment StoreEntitySet="Chemistry">
+                <ScalarProperty Name="RightAns" ColumnName="RightAns" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="QID" ColumnName="QID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurrentAffairs">
+            <EntityTypeMapping TypeName="GKHUBModel.CurrentAffair">
+              <MappingFragment StoreEntitySet="CurrentAffairs">
+                <ScalarProperty Name="RightAns" ColumnName="RightAns" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="QID" ColumnName="QID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Histories">
+            <EntityTypeMapping TypeName="GKHUBModel.History">
+              <MappingFragment StoreEntitySet="History">
+                <ScalarProperty Name="RightAns" ColumnName="RightAns" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="QID" ColumnName="QID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Polities">
+            <EntityTypeMapping TypeName="GKHUBModel.Polity">
+              <MappingFragment StoreEntitySet="Polity">
+                <ScalarProperty Name="RightAns" ColumnName="RightAns" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="QID" ColumnName="QID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Economics">
+            <EntityTypeMapping TypeName="GKHUBModel.Economic">
+              <MappingFragment StoreEntitySet="Economic">
+                <ScalarProperty Name="RightAns" ColumnName="RightAns" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="QID" ColumnName="QID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Geographies">
+            <EntityTypeMapping TypeName="GKHUBModel.Geography">
+              <MappingFragment StoreEntitySet="Geography">
+                <ScalarProperty Name="RightAns" ColumnName="RightAns" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="QID" ColumnName="QID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

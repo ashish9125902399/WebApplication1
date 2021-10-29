@@ -1,0 +1,211 @@
+﻿@model WebApplication1.Models.PracticeModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Practice";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<style>
+    #Practicebox{
+        height:600px;
+        width:600px;
+        
+    }
+    label {
+        height:40px;
+        
+        padding-top:10px;
+        padding-left:10px;
+        padding-right:10px;
+        
+    }
+    .content {
+        width: 70%;
+        margin-top: 10px;
+    }
+  
+</style>
+<div id="Practicebox">
+    <h2 id="sub">@ViewBag.Subject</h2>
+    <hr />
+    
+        Q.<text id="qid" style="font-weight:bolder">0</text>)<label id="question"></label>
+    <br /><br />
+    <div class="content">
+        A) <label id="a" onclick="OptionA()"></label>
+    </div>
+    <div class="content">
+        B) <label id="b" onclick="OptionB()"></label>
+    </div>
+    <div class="content">
+        C) <label id="c" onclick="OptionC()"></label>
+    </div>
+    <div class="content">
+        D) <label id="d" onclick="OptionD()"></label>
+    </div>
+    <br /><br />
+    <input type="button" value="Previous" onclick="Prev()" />
+    <input type="button" value="Next" onclick="Next()" />
+</div>
+<script>
+    $(document).ready(function () {
+        Next();
+    })
+
+    function OptionA() {
+        var SelectedOption = "A";
+        CheckAns(SelectedOption);
+    }
+    function OptionB() {
+        var SelectedOption = "B";
+        CheckAns(SelectedOption);
+    }
+    function OptionC() {
+        var SelectedOption = "C";
+        CheckAns(SelectedOption);    }
+    function OptionD() {
+        var SelectedOption = "D";
+        CheckAns(SelectedOption);    }
+
+    function CheckAns(SelectedOption) {
+        var id = $("#qid").text();        
+        var sub = $("#sub").text();
+
+        var obj = {
+            QID: id,
+            Subject: sub
+        }
+        $.ajax({
+            url: "/User/GetQuestion",
+            method: "GET",
+            data: obj,
+            success: function (data) {
+                data = JSON.parse(data);                
+                if (SelectedOption == "A" ) {
+                    if (data.RightAns == "A") {
+                        $("#a").css("background-color", "lightgreen");
+                    }
+                    else if (data.RightAns == "B") {
+                        $("#b").css("background-color", "lightgreen");
+                        $("#a").css("background-color", "lightcoral");
+                    }
+                    else if (data.RightAns == "C") {
+                        $("#c").css("background-color", "lightgreen");
+                        $("#a").css("background-color", "lightcoral");
+                    }
+                    else if (data.RightAns == "D") {
+                        $("#d").css("background-color", "lightgreen");
+                        $("#a").css("background-color", "lightcoral");
+                    }
+                }
+
+                else if (SelectedOption == "B") {
+                    if (data.RightAns == "A") {
+                        $("#a").css("background-color", "lightgreen");
+                        $("#b").css("background-color", "lightcoral");
+                    }
+                    else if (data.RightAns == "B") {
+                        $("#b").css("background-color", "lightgreen");
+                    }
+                    else if (data.RightAns == "C") {
+                        $("#c").css("background-color", "lightgreen");
+                        $("#b").css("background-color", "lightcoral");
+                    }
+                    else if (data.RightAns == "D") {
+                        $("#d").css("background-color", "lightgreen");
+                        $("#b").css("background-color", "lightcoral");
+                    }
+                }
+                else if (SelectedOption == "C") {
+                    if (data.RightAns == "A") {
+                        $("#a").css("background-color", "lightgreen");
+                        $("#c").css("background-color", "lightcoral");
+                    }
+                    else if (data.RightAns == "B") {
+                        $("#b").css("background-color", "lightgreen");
+                        $("#c").css("background-color", "lightcoral");
+                    }
+                    else if (data.RightAns == "C") {
+                        $("#c").css("background-color", "lightgreen");
+                    }
+                    else if (data.RightAns == "D") {
+                        $("#d").css("background-color", "lightgreen");
+                        $("#c").css("background-color", "lightcoral");
+                    }
+                }
+                else if (SelectedOption == "D") {
+                    if (data.RightAns == "A") {
+                        $("#a").css("background-color", "lightgreen");
+                        $("#d").css("background-color", "lightcoral");
+                    }
+                    else if (data.RightAns == "B") {
+                        $("#b").css("background-color", "lightgreen");
+                        $("#d").css("background-color", "lightcoral");
+                    }
+                    else if (data.RightAns == "C") {
+                        $("#c").css("background-color", "lightgreen");
+                        $("#d").css("background-color", "lightcoral");
+                    }
+                    else if (data.RightAns == "D") {
+                        $("#d").css("background-color", "lightgreen");
+                    }
+                }
+                
+            },
+            error: function (err) {
+                console.error(err);
+            }
+        })
+    }
+
+    function Next() {
+        var id = $("#qid").text();
+        id = parseInt(id) + 1;
+        var sub = $("#sub").text();
+      
+        var obj = {
+            QID: id,
+            Subject: sub
+      }
+      GetData(obj);
+    }
+      
+    function Prev() {
+        var id = $("#qid").text();
+        id = parseInt(id)-1;
+        var sub = $("#sub").text();
+        var obj = {
+            QID: id,
+            Subject: sub
+        }
+        GetData(obj);
+    }
+
+    function GetData(obj) {
+        $.ajax({
+            url: "/User/GetQuestion",
+            method: "GET",
+            data: obj,
+            success: function (data) {
+                data = JSON.parse(data);
+                $("#qid").text(data.QID);
+                $("#question").text(data.Question);
+                $("#a").text(data.A);
+                $("#b").text(data.B);
+                $("#c").text(data.C);
+                $("#d").text(data.D);
+                console.log(data);
+            },
+            error: function (err) {
+                console.error(err);
+            }
+        })
+        x = 0;
+        
+        $("#a").css("background-color", "white");
+        $("#b").css("background-color", "white");
+        $("#c").css("background-color", "white");
+        $("#d").css("background-color", "white");
+    }
+
+
+</script>

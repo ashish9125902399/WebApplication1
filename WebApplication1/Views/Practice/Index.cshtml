@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebApplication1.Models.PracticeModel>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>@ViewBag.Subject</h3>
+<br />
+@Html.ActionLink("Create New", "Create", new { sub = ViewBag.Subject })
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Question)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RightAns)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.A)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.B)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.C)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RightAns)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.QID, sub = ViewBag.Subject })
+            </td>
+        </tr>
+    }
+
+</table>
